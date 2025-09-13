@@ -23,6 +23,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 *, *::before, *::after {
   box-sizing: inherit;
 }

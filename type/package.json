@@ -17,13 +17,15 @@
     "chart.js": "^4.5.0",
     "framer-motion": "^12.23.12",
     "jsonwebtoken": "^9.0.2",
+    "locomotive-scroll": "^4.1.4",
     "mongoose": "^8.18.1",
     "next": "^15.5.3",
     "next-auth": "^4.24.11",
     "postcss": "^8.5.6",
     "react": "^19.1.1",
     "react-chartjs-2": "^5.3.0",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "recharts": "^3.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

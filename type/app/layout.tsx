@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
+// Import locomotive scroll CSS globally so styles like .has-scroll-smooth are available
+import 'locomotive-scroll/dist/locomotive-scroll.css';
 import Header from '@/components/Header';
 
 const inter = Inter({ 

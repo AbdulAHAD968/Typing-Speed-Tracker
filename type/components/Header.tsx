@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Lobster } from "next/font/google";
+import { Poppins } from "next/font/google";
 
-const lobster = Lobster({
-  weight: "400",
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -16,7 +16,6 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Check if user is logged in by looking for the token cookie
     const checkAuthStatus = () => {
       const token = document.cookie.split('; ').find(row => row.startsWith('token='));
       setIsLoggedIn(!!token);
@@ -24,7 +23,6 @@ export default function Header() {
 
     checkAuthStatus();
 
-    // Listen for click events to close the mobile menu when clicking outside
     const handleClickOutside = (event: MouseEvent) => {
       const menu = document.getElementById('mobile-menu');
       const menuButton = document.getElementById('menu-button');
@@ -60,27 +58,25 @@ export default function Header() {
     }
   };
 
-  // Reusable button-like class
   const navLinkClass =
     'px-4 py-2 rounded-lg font-medium transition-colors shadow-sm ' +
     'bg-transparent text-peach-100 hover:bg-amber-200 hover:text-coffee-700 active:bg-amber-300';
 
   const primaryButtonClass =
-    'px-4 py-2 rounded-lg font-medium transition-colors shadow-sm ' +
+    'px-4 py-2 rounded-lg font-semibold transition-colors shadow-sm ' +
     'bg-amber-200 text-coffee-700 hover:bg-amber-300 active:bg-amber-400';
 
   return (
     <>
-      <header className="bg-gradient-to-r from-coffee-600 to-coffee-700 text-peach-100 p-4 shadow-md">
+      <header className={`${poppins.className} bg-gradient-to-r from-coffee-600 to-coffee-700 text-peach-100 p-4 shadow-md`}>
         <div className="container mx-auto flex justify-between items-center">
+          {/* Logo / Brand */}
           <Link 
             href="/" 
-            className={`${lobster.className} text-3xl font-bold flex items-center tracking-wide`}
+            className="text-2xl sm:text-3xl font-bold tracking-wide"
           >
-            <span className="hidden sm:inline">Typing Master</span>
-            <span className="sm:hidden">TM</span>
+            Typing Master
           </Link>
-
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-4 items-center">
@@ -106,7 +102,7 @@ export default function Header() {
             )}
           </nav>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
             id="menu-button"
             className="md:hidden text-peach-100 focus:outline-none"
@@ -114,7 +110,7 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             <svg
-              className="w-6 h-6"
+              className="w-7 h-7"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -139,11 +135,11 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile Navigation */}
         {isMenuOpen && (
           <div
             id="mobile-menu"
-            className="md:hidden mt-4 bg-coffee-600 rounded-lg shadow-lg p-4"
+            className="md:hidden mt-3 bg-coffee-600 rounded-lg shadow-lg p-4"
           >
             <nav className="flex flex-col space-y-3">
               <Link

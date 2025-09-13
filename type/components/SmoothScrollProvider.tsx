@@ -2,11 +2,13 @@
 
 import { useEffect, useRef } from 'react';
 import LocomotiveScroll from 'locomotive-scroll';
+import 'locomotive-scroll/dist/locomotive-scroll.css';
 
-import TypingTest from '@/components/TypingTest';
-import AuthGuard from '@/components/AuthGuard';
-
-export default function TypingTestPage() {
+export default function SmoothScrollProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -25,8 +27,8 @@ export default function TypingTestPage() {
   }, []);
 
   return (
-    <AuthGuard>
-      <TypingTest />
-    </AuthGuard>
+    <div ref={scrollRef} data-scroll-container>
+      {children}
+    </div>
   );
 }
