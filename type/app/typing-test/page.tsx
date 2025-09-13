@@ -1,29 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import LocomotiveScroll from 'locomotive-scroll';
-
 import TypingTest from '@/components/TypingTest';
 import AuthGuard from '@/components/AuthGuard';
 
 export default function TypingTestPage() {
-  const scrollRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (!scrollRef.current) return;
-
-    const scroll = new LocomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-      lerp: 0.1,
-      multiplier: 1,
-    });
-
-    return () => {
-      scroll.destroy();
-    };
-  }, []);
-
   return (
     <AuthGuard>
       <TypingTest />

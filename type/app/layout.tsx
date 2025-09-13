@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   description: 'Track and improve your typing speed with our beautiful, modern typing practice application.',
   keywords: 'typing, speed test, typing practice, WPM, accuracy',
   icons: {
-    icon: '/typing.png',
-    shortcut: '/typing.png',
-    apple: '/typing.png',
+    icon: '/my-app-icon.png',
+    shortcut: '/my-app-icon.png',
+    apple: '/my-app-icon.png',
   },
 };
 

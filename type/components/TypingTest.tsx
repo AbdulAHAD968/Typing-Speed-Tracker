@@ -326,7 +326,7 @@ export default function TypingTest(): JSX.Element {
     if (inputRef.current) inputRef.current.focus();
   }, []);
 
-   return (
+  return (
     <div className="max-w-5xl mx-auto p-8 bg-peach-50 rounded-lg shadow-md border border-peach-200">
       <h1 className="text-3xl font-bold mt-8 mb-10 text-center text-brown-800">Typing Speed Test — Fixed</h1>
 
@@ -363,7 +363,7 @@ export default function TypingTest(): JSX.Element {
 
       {/* Text display */}
       <div className="mb-6 p-6 bg-peach-100 rounded-lg border border-peach-300 shadow-sm relative overflow-hidden">
-        <div className="absolute top-2 right-2 text-sm text-brown-600 bg-peach-200 px-2 py-1 rounded z-10">
+        <div className="mb-4 text-sm text-brown-600 bg-peach-200 px-2 py-1 rounded text-center">
           {userInput.length}/{text.length} characters
         </div>
         <div className="relative">
