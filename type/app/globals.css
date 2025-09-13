@@ -1,26 +1,166 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #f24545ff;
+  /* Palette: light peach / coffee */
+  --bg-100: #fffaf6; /* soft cream */
+  --bg-200: #fff3ea; /* warmer cream */
+  --surface: #fff8f5; /* panels */
+  --peach-400: #f7b89a; /* peach accent */
+  --peach-600: #f08a65;
+  --coffee-700: #6b4f3a; /* deep coffee */
+  --coffee-500: #8b664f; /* muted coffee */
+  --muted: #9e7e6b;
+  --text: #3b2f2a; /* dark coffee text */
+  --glass: rgba(255, 255, 255, 0.6);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg-100);
+  color: var(--text);
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*, *::before, *::after {
+  box-sizing: inherit;
 }
+
+
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-100);
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: var(--coffee-700);
+}
+
+a {
+  color: var(--peach-600);
+  text-decoration: none;
+  transition: color 0.18s ease, opacity 0.18s ease;
+}
+a:hover {
+  color: var(--coffee-700);
+  opacity: 0.95;
+  text-decoration: underline;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+button {
+  background: linear-gradient(180deg, var(--coffee-500), var(--coffee-700));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 6px 14px rgba(107,79,58,0.08);
+}
+button:active {
+  transform: translateY(1px);
+}
+button:hover {
+  box-shadow: 0 10px 20px rgba(107,79,58,0.12);
+}
+
+/* Primary peach variant for subtle buttons */
+.btn-peach {
+  background: linear-gradient(180deg, var(--peach-400), var(--peach-600));
+  color: var(--coffee-700);
+}
+
+input, textarea {
+  border: 1px solid rgba(155,118,96,0.12);
+  border-radius: 8px;
+  padding: 0.6em;
+  background: var(--surface);
+  transition: border-color 0.14s ease, box-shadow 0.14s ease;
+}
+input:focus, textarea:focus {
+  border-color: var(--peach-600);
+  box-shadow: 0 6px 18px rgba(240,138,101,0.08);
+}
+
+::selection {
+  background: rgba(240,138,101,0.18);
+  color: var(--coffee-700);
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(139,102,79,0.95), rgba(107,79,58,0.95));
+  border-radius: 999px;
+  border: 2px solid rgba(255,250,246,0.6);
+}
+
+/* Card / container utility */
+.container-surface {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(59,47,42,0.04);
+}
+
+/* Subtle typographic helpers */
+.lead {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Locomotive Scroll base styles (tuned for new palette) */
+.locomotive-scroll {
+  will-change: transform;
+  overflow: hidden;
+}
+.c-scrollbar {
+  position: fixed;
+  right: 2.2vw;
+  top: 12vh;
+  width: 10px;
+  height: 76vh;
+  background: rgba(155,118,96,0.08);
+  border-radius: 999px;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  padding: 4px;
+}
+.c-scrollbar_thumb {
+  width: 100%;
+  height: 60px; /* locomotive will update this */
+  background: linear-gradient(180deg, var(--coffee-500), var(--coffee-700));
+  border-radius: 999px;
+  transition: background 0.18s ease, transform 0.12s ease;
+}
+.c-scrollbar_thumb:hover {
+  transform: scaleY(1.02);
+}
+
+/* Small responsive tweaks */
+@media (max-width: 640px) {
+  .c-scrollbar { display: none; }
+  html { font-size: 15px; }
 }
