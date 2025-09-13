@@ -18,6 +18,7 @@
     "framer-motion": "^12.23.12",
     "jsonwebtoken": "^9.0.2",
     "locomotive-scroll": "^4.1.4",
+    "lucide-react": "^0.544.0",
     "mongoose": "^8.18.1",
     "next": "^15.5.3",
     "next-auth": "^4.24.11",
