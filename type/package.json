@@ -15,6 +15,7 @@
     "axios": "^1.12.1",
     "bcryptjs": "^3.0.2",
     "chart.js": "^4.5.0",
+    "framer-motion": "^12.23.12",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.18.1",
     "next": "^15.5.3",
