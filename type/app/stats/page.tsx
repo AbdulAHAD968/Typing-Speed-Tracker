@@ -285,6 +285,59 @@ export default function Stats() {
               </div>
             )}
           </div>
+
+          {/* Progress Summary */}
+          <div className="bg-white p-6 rounded-lg shadow-md mt-8">
+            <h2 className="text-xl font-semibold mb-4">Progress Summary</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-medium mb-2">Best Performance</h3>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span>Highest WPM:</span>
+                    <span className="font-semibold text-blue-600">
+                      {Math.max(...filteredResults.map((r) => r.wpm))} WPM
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Best Accuracy:</span>
+                    <span className="font-semibold text-green-600">
+                      {Math.max(...filteredResults.map((r) => r.accuracy))}%
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Consistency</h3>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span>Tests this week:</span>
+                    <span className="font-semibold">
+                      {filterResults(
+                        results.filter((r) => {
+                          const resultDate = new Date(r.createdAt);
+                          const diffTime = Math.abs(Date.now() - resultDate.getTime());
+                          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                          return diffDays <= 7;
+                        })
+                      ).length}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Improvement trend:</span>
+                    <span className="font-semibold text-green-600">
+                      {filteredResults.length > 1
+                        ? filteredResults[filteredResults.length - 1].wpm >
+                          filteredResults[0].wpm
+                          ? '↑ Improving'
+                          : '→ Steady'
+                        : 'N/A'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </>
       )}
     </div>
