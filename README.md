@@ -1,6 +1,8 @@
 # Typing Speed Tracker
 
-**Typing Speed Tracker** is a web application designed to help users improve their typing speed and accuracy through an interactive typing test interface. Built with modern web technologies, it offers real-time performance tracking, detailed statistics, and user authentication for a personalized experience. The application is deployed at [https://typeon.vercel.app/](https://typeon.vercel.app/) and the source code is available at [https://github.com/AbdulAHAD968/Typing-Speed-Tracker](https://github.com/AbdulAHAD968/Typing-Speed-Tracker).
+**Typing Speed Tracker** is a web application designed to help users improve their typing speed and accuracy through an interactive typing test interface. Built with modern web technologies, it offers real-time performance tracking, detailed statistics, and user authentication for a personalized experience. The application is deployed at [Live](https://typeon.vercel.app/) and the source code is available at [Repositery Link](https://github.com/AbdulAHAD968/Typing-Speed-Tracker).
+
+![Landing Page Image](./github-readme-images/landing-page.png)
 
 ---
 
@@ -26,6 +28,8 @@
 - **Responsive Design**: Fully responsive UI optimized for both desktop and mobile devices, ensuring a seamless experience across platforms.
 - **Result Persistence**: Saves test results to a MongoDB database, accessible via a dedicated statistics page.
 - **Progress Overview**: Displays average WPM, accuracy, and total tests completed in a clean, card-based layout.
+
+![Register Page](./github-readme-images/register.png)
 
 ---
 
@@ -139,6 +143,8 @@ To run the project locally, follow these steps:
 4. **Log Out**:
    - Use the logout option in the header to end your session.
 
+![Login Page Image](./github-readme-images/login.png)
+
 ---
 
 ## Testing
@@ -158,6 +164,8 @@ To run tests:
 ```bash
 npm run test
 ```
+
+![Test Result Image](./github-readme-images/test-result.png)
 
 ---
 
@@ -182,6 +190,8 @@ Contributions are welcome! To contribute:
 5. Open a pull request with a detailed description of your changes.
 
 Please ensure your code follows the project's ESLint and Prettier configurations.
+
+![Stats Page Image](./github-readme-images/stats-page.png)
 
 ---
 
